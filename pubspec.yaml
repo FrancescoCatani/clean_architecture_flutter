@@ -1,8 +1,8 @@
 name: clean_architecture
-description: this package allows to initialize clean architecture in your project .
+description: this package allows to initialize clean architecture in your project.
 version: 1.0.0
 author: Francesco Catani, Camillo Bucciarelli
-homepage:
+homepage: https://github.com/FrancescoCatani/clean_architecture_flutter
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  path: ^1.7.0
+
   flutter_core:
     git: https://github.com/PalaTeam/flutter_core
 
