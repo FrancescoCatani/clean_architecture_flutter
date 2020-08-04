@@ -191,12 +191,10 @@ packages:
   flutter_core:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "066f4d424a20a22d86aabb25cac0cd696814b2e1"
-      url: "https://github.com/PalaTeam/flutter_core"
-    source: git
-    version: "0.0.1"
+      name: flutter_core
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   flutter_local_notifications:
     dependency: transitive
     description:

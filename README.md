@@ -24,6 +24,8 @@ clean_architecture param project_path
 
 - `module` * - allows you to create a module in your project.
 
+    - `name` * - is the name of the module
+
 - `project_path` * - is the path of your project.
 
 ## Example
@@ -32,6 +34,11 @@ Initialize the clean architecture in in the project path /Users/user/Desktop/pro
 
 ```bash
 flutter pub global run clean_architecture generate /Users/user/Desktop/project_example
+```
+Create module in the project path /Users/user/Desktop/project_example
+
+```bash
+flutter pub global run clean_architecture module employee /Users/user/Desktop/project_example
 ```
 
 Generates:

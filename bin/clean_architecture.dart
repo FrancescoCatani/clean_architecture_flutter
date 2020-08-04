@@ -1,5 +1,13 @@
 import 'dart:io';
 
+///    USAGE:
+///
+///    COMMAND:
+///    flutter pub global run clean_architecture generate /Users/user/Desktop/project_example
+///
+///    use the command module instead generate to create module in lib folder
+
+// ignore: missing_return
 Future main(List<String> args) {
   try {
     switch (args[0]) {
@@ -15,32 +23,30 @@ Future main(List<String> args) {
           if (args[1] == null) {
             print('You must pass a module name.');
             exit(0);
-          }
-          else if (args[2] == null) {
+          } else if (args[2] == null) {
             print('You must pass a folder of the project');
             exit(0);
           }
           var moduleName = args[1];
           var projectFolder = args[2];
-          generateModule(projectFolder,moduleName);
+          generateModule(projectFolder, moduleName);
         }
         break;
     }
   } catch (e) {
-    print("You must pass args:\n -gen  to generate clean architecture\n -module name  to create a module");
+    print(
+        "You must pass args:\n -gen  to generate clean architecture\n -module name  to create a module");
   }
 }
 
 void generateCleanArchitecture(String projectFolder) async {
-
   File file = new File('pubspec.yaml');
 
   List<String> lines = file.readAsLinesSync();
 
-  for(int i=0; i<lines.length; i++)
-    if(lines[i].contains('sdk: flutter') == true)
-    {
-      lines.insert(i,"  flutter_core:");
+  for (int i = 0; i < lines.length; i++)
+    if (lines[i].contains('sdk: flutter') == true) {
+      lines.insert(i, "  flutter_core:");
     }
 
   Directory.current = Directory('$projectFolder/lib');
@@ -71,7 +77,6 @@ void generateCleanArchitecture(String projectFolder) async {
         .create()
         .then((file) => File('${file.path}/.gitkeep').create());
   });
-
 }
 
 void generateModule(String projectFolder, String moduleName) async {
@@ -97,4 +102,3 @@ void generateModule(String projectFolder, String moduleName) async {
     });
   });
 }
-
